@@ -1,0 +1,41 @@
+.asidebar-container {
+  width: 15vw;
+  height: 100vh;
+  padding-inline: 1.5rem;
+  background-color: rgb(26, 26, 26);
+  padding-block: .5rem;
+}
+.logo-container {
+  text-align: center;
+  padding-block: .7rem;
+}
+.logo {
+  display: inline-flex;
+  padding: .5rem;
+  background-color: rgb(30, 144, 255);
+  border-radius: 12px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+
+}
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding-block: .8rem;
+  padding-inline: .5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-weight: 600;
+}
+
+.link:hover {
+  background-color: rgb(84, 138, 84);
+  color: #fff;
+}
