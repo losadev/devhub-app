@@ -1,14 +1,11 @@
-import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import AsideBar from './components/AsideBar'
+import Layout from './components/Layout'
 
 function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <AsideBar></AsideBar>
-    </BrowserRouter>
+   <Layout />
     </>
   )
 }
