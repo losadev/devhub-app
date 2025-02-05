@@ -1,0 +1,11 @@
+.container-categories{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  gap: 1.5rem;
+}
+.container-recent-res {
+  color: #fff;
+}
