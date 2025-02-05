@@ -5,14 +5,15 @@
   border-radius: 12px;
   padding: 15px;
   color: rgb(156 163 175 );
+  flex: 1;
 }
 
 input {
-  flex: 1;
   border: none;
   background-color: inherit;
   outline: none;
   margin-left: .5rem;
   font-size: 1rem;
   color: aliceblue;
+  flex: 1;
 }
