@@ -9,6 +9,7 @@ import './index.css'
 import RecentResources from "../../components/RecentResources/RecentResources";
 
 const Home = () => {
+
   return (
     <div className="container-home">
       <div className="container-categories">
