@@ -1,9 +1,9 @@
 .asidebar-container {
   height: 100vh;
-  width: 15vw;
   padding-inline: 1.5rem;
   background-color: rgb(26, 26, 26);
   padding-block: .5rem;
+  width: 18rem;
 }
 .logo-container {
   text-align: center;
@@ -26,9 +26,9 @@ nav {
 .link {
   text-decoration: none;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-block: .8rem;
-  padding-inline: 1.2rem;
+  padding-left: 1rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
