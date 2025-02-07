@@ -6,7 +6,6 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { RiPaletteLine } from "react-icons/ri";
 import { FaTools } from "react-icons/fa";
 import './index.css'
-import RecentResources from "../../components/RecentResources/RecentResources";
 
 const Home = () => {
 
@@ -20,7 +19,7 @@ const Home = () => {
       <CategoryResource Icon={FaTools} children={<ButtonViewAll />} numResources={0} title="Tools"/>
       </div>
       <div className="container-recent-res">
-        <RecentResources />
+        <h2>Recent Resources</h2>
       </div>
     </div>
   )

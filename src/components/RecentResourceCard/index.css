@@ -1,0 +1,7 @@
+.container-rec-res-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(26, 26, 26);
+  padding: 1.5rem;
+  border-radius: .8rem;
+}
