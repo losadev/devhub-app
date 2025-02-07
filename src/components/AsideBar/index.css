@@ -1,5 +1,4 @@
 .asidebar-container {
-  height: 100vh;
   padding-inline: 1.5rem;
   background-color: rgb(26, 26, 26);
   padding-block: .5rem;
@@ -41,3 +40,4 @@ nav {
   background-color: #39ff141a;
   color: #fff;
 }
+
