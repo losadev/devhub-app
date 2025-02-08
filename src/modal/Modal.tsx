@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './index.css'
 import useResource from '../hooks/useResource'
 import { ResourceType } from '../types/Resource.type'
+import { addResourceToLocalStorage } from '../services/localStorageService'
 
 type Props = {
   isOpen: boolean
@@ -22,6 +23,7 @@ const Modal = ({isOpen, onClose}: Props) => {
       type: type,
       favourite: false
     }
+    addResourceToLocalStorage(resource)
     addResource(resource);
   }
 

@@ -1,9 +1,11 @@
 import ResourceCard from "../../components/ResourceCard/ResourceCard"
-import useResource from "../../hooks/useResource"
+import { getResourceFromLocalStorage } from "../../services/localStorageService"
+import { ResourceType } from "../../types/Resource.type"
 import './index.css'
 
 const Resources = () => {
-  const {resources} = useResource()
+  const resources:ResourceType[] = getResourceFromLocalStorage();
+
   return (
     <div className="container-resourceCard">
       {resources.map((resources,index) => (
