@@ -27,22 +27,28 @@ h2 {
 label {
   color: #fff
 }
-p {
+fieldset {
   display: flex;
   flex-direction: column;
   gap: .3rem;
+  border: none;
 }
-.info-modal input {
+.info-modal input, select {
   background-color: rgb(18, 18, 18);
   padding: 1rem;
   margin: 0;
   border-radius: .6rem;
+  color: #fff;
+  border: none;
+}
+select {
+  font-size: 1rem;
 }
 .container-btn {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   & button {
     flex: 1;
     margin: 0;
