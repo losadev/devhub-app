@@ -1,0 +1,50 @@
+.bg-resource-card {
+  background-color: rgb(26, 26, 26);
+  color: #fff;
+  padding: 1.3rem;
+  border-radius: .75rem;
+}
+.title-star {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-icons {
+  display: flex;
+  justify-content: end;
+  gap: .3rem;
+  margin-top: .5rem;
+}
+.icon-edit {
+  color: gray;
+}
+.icon-delete {
+  color: rgba(255, 0, 0, 0.774);
+}
+.icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.tag-card {
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  margin-block: .5rem;
+}
+.tag-card span {
+  color: rgb(22 101 52);
+  background-color: rgb(220 252 231);
+  display: inline-flex;
+  border-radius: 15px;
+  padding: .3rem .5rem;
+  font-size: .8rem;
+}
+.icon-star:hover {
+  color: yellow;
+}
+.favourite {
+  background-color: yellow;
+}
+a {
+  color: rgb(64, 140, 255);
+}
