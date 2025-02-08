@@ -14,14 +14,24 @@ const Modal = ({isOpen, onClose}: Props) => {
       <div className="container-modal">
       <h2>Add new resource</h2>
       <div className="info-modal">
-        <p>
+        <fieldset>
           <label htmlFor="title">Title</label>
           <input type="text" name="title"/>
-        </p>
-        <p>
+        </fieldset>
+        <fieldset>
           <label htmlFor="url">URL</label>
           <input type="text" name="url"/>
-        </p>
+        </fieldset>
+        <fieldset>
+          <label htmlFor="type">Type</label>
+          <select name="type">
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Design">Design</option>
+            <option value="Tools">Tools</option>
+          </select>
+        </fieldset>
       </div>
       <div className="container-btn">
         <button className='btn-cancel' onClick={() => onClose()}>Cancel</button>
