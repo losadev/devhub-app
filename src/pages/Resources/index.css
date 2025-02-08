@@ -1,0 +1,19 @@
+.container-resourceCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+   text-overflow: ellipsis; 
+}
+@media (width <= 1565px) {
+  .container-resourceCard {
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  }
+}
+@media (width <= 1104px) {
+  .container-resourceCard {
+    display: grid;
+  grid-template-columns: 1fr;
+  }
+}

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home/Home'
-import Resources from './pages/Resources'
+import Resources from './pages/Resources/Resources'
 import Favourites from './pages/Favourites'
 import Settings from './pages/Settings'
 import Layout from './components/Layout/Layout'

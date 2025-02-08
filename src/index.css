@@ -6,7 +6,6 @@
 }
 
 body {
-  height: 100vh;
   position: relative;
 }
 html, body, #root {
@@ -15,6 +14,5 @@ html, body, #root {
   padding: 0;
 }
 #root {
-  height: 100vh; 
   display: flex;
 }

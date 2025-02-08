@@ -9,4 +9,15 @@
 .container-recent-res h2{
   color: #fff;
 }
-
+@media (width <= 985px) {
+  .container-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (width <= 705px) {
+  .container-categories {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
