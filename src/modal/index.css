@@ -68,3 +68,6 @@ select {
 .btn-add:hover {
   background-color: rgba(30, 143, 255, 0.705);
 }
+.empty-input-error {
+  color: red;
+}

@@ -29,15 +29,17 @@
   padding: 3px;
   display: flex;
   align-items: center;
-  margin-block: .5rem;
+  margin-block: 1rem;
+  padding: 0;
+
 }
 .tag-card span {
-  color: rgb(22 101 52);
-  background-color: rgb(220 252 231);
+ 
   display: inline-flex;
   border-radius: 15px;
   padding: .3rem .5rem;
   font-size: .8rem;
+  font-weight: 600;
 }
 .icon-star:hover {
   color: yellow;

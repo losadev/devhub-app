@@ -15,14 +15,20 @@ const Modal = ({isOpen, onClose}: Props) => {
   const {addResource} = useResource();
 
   const handleClick = () => {
-    const resource:ResourceType = {
-      id:Math.floor(Math.random()*10),
-      title: title,
-      url: url,
-      type: type,
-      favourite: false
+    if(title.trim() != "" && url.trim() != ""  && type.trim() != "") {
+      const resource:ResourceType = {
+        id:Date.now(),
+        title: title,
+        url: url,
+        type: type,
+        favourite: false
+      }
+      addResource(resource);
     }
-    addResource(resource);
+
+    setTitle('')
+    setUrl('')
+    setType('')
   }
 
   if (!isOpen) return null
@@ -34,15 +40,16 @@ const Modal = ({isOpen, onClose}: Props) => {
       <div className="info-modal">
         <fieldset>
           <label htmlFor="title">Title</label>
-          <input type="text" name="title" onChange={(e) => setTitle(e.target.value)}/>
+          <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} required/>
         </fieldset>
         <fieldset>
           <label htmlFor="url">URL</label>
-          <input type="text" name="url" onChange={(e) => setUrl(e.target.value)}/>
+          <input type="text" name="url" onChange={(e) => setUrl(e.target.value)} required/>
         </fieldset>
         <fieldset>
           <label htmlFor="type">Type</label>
-          <select name="type" onChange={(e) => setType(e.target.value)}>
+          <select name="type" onChange={(e) => setType(e.target.value)} required>
+            <option value="">-- Select one --</option>
             <option value="Frontend">Frontend</option>
             <option value="Backend">Backend</option>
             <option value="DevOps">DevOps</option>
@@ -53,7 +60,11 @@ const Modal = ({isOpen, onClose}: Props) => {
       </div>
       <div className="container-btn">
         <button className='btn-cancel' onClick={() => onClose()}>Cancel</button>
-        <button className='btn-add' onClick={handleClick}>Add Resource</button>
+        <button className='btn-add' onClick={() => {
+          handleClick();
+
+          onClose();
+        }}>Add Resource</button>
       </div>
       </div>
     </div>
