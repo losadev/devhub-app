@@ -44,6 +44,9 @@ const ResourceCard = ({title,url, tag, handleClickDelete,handleClickFav,id, favo
     starStyles.color = 'yellow';
   }
 
+
+const ResourceCard = ({title,url, tag}:Props) => {
+  
   return (
     <div className='bg-resource-card'>
       <div className='title-star'>

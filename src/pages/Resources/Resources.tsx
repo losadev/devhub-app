@@ -1,8 +1,10 @@
 import ResourceCard from "../../components/ResourceCard/ResourceCard"
-import useResource from "../../hooks/useResource"
+import { getResourceFromLocalStorage } from "../../services/localStorageService"
+import { ResourceType } from "../../types/Resource.type"
 import './index.css'
 
 const Resources = () => {
+
   const {resources, removeResource, setFavourite} = useResource()
   const handleClickDelete = (id: number | string) => {
     removeResource(id)
@@ -11,6 +13,8 @@ const Resources = () => {
   const handleClickSetFavourite = (id: number | string) => {
     setFavourite(id)
   }
+
+  const resources:ResourceType[] = getResourceFromLocalStorage();
 
   return (
     <div className="container-resourceCard">
