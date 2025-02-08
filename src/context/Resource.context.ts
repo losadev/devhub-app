@@ -5,6 +5,8 @@ type ResourceContextType = {
   resources: ResourceType[];
   addResource: (resource: ResourceType) => void;
   removeResource: (id: number | string) => void;
+  getResource: (id: number | string) => void;
+  setFavourite: (id:number | string) => void;
 }
 
 export default createContext<ResourceContextType>({} as ResourceContextType)

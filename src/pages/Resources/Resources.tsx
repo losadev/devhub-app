@@ -4,12 +4,22 @@ import { ResourceType } from "../../types/Resource.type"
 import './index.css'
 
 const Resources = () => {
+
+  const {resources, removeResource, setFavourite} = useResource()
+  const handleClickDelete = (id: number | string) => {
+    removeResource(id)
+  }
+
+  const handleClickSetFavourite = (id: number | string) => {
+    setFavourite(id)
+  }
+
   const resources:ResourceType[] = getResourceFromLocalStorage();
 
   return (
     <div className="container-resourceCard">
-      {resources.map((resources,index) => (
-        <ResourceCard key={index} tag={resources.type} title={resources.title} url={resources.url}/>
+      {resources.map((resource,index) => (
+        <ResourceCard id={resource.id} key={index} tag={resource.type} title={resource.title} url={resource.url} handleClickDelete={handleClickDelete} handleClickFav={handleClickSetFavourite} favourite={resource.favourite}/>
       ))}
     </div>
   )
