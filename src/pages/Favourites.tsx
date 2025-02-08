@@ -13,9 +13,10 @@ const Favourites = () => {
 
   return (
     <div className="container-resourceCard">
-      {resources.map((resource,index) => (
+      {resources.length > 0 ? 
+      resources.map((resource,index) => (
         resource.favourite && <ResourceCard id={resource.id} key={index} tag={resource.type} title={resource.title} url={resource.url} handleClickDelete={handleClickDelete} handleClickFav={handleClickFav} favourite={resource.favourite}/>
-      ))}
+      )):<div style={{color:"#fff"}}>No resources available</div>}
     </div>
   )
 }

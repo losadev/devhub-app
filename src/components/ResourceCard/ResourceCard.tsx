@@ -3,6 +3,8 @@ import { MdOutlineModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
+import { CSSProperties } from 'react';
+import useResource from '../../hooks/useResource';
 
 type Props = {
   id: number | string
@@ -15,13 +17,18 @@ type Props = {
 }
 
 const ResourceCard = ({title,url, tag, handleClickDelete,handleClickFav,id, favourite}:Props) => {
-  const tagStyles: React.CSSProperties = {
+  
+  const {openModal} = useResource()
+
+  const tagStyles: CSSProperties = {
     backgroundColor: '',
     color: ''
   }
-  const starStyles = {
+  const starStyles: CSSProperties = {
     color: ''
   }
+
+
 
   if(tag === 'Frontend') {
     tagStyles.backgroundColor = 'lightblue';
@@ -43,9 +50,6 @@ const ResourceCard = ({title,url, tag, handleClickDelete,handleClickFav,id, favo
   if(favourite) {
     starStyles.color = 'yellow';
   }
-
-
-const ResourceCard = ({title,url, tag}:Props) => {
   
   return (
     <div className='bg-resource-card'>
@@ -64,7 +68,7 @@ const ResourceCard = ({title,url, tag}:Props) => {
         <a href={url}>{url}</a>
       </div>
       <div className="container-icons">
-        <span className='icon icon-edit'><MdOutlineModeEdit /></span>
+        <span className='icon icon-edit'><MdOutlineModeEdit onClick={openModal}/></span>
         <span className='icon icon-delete'><MdDelete onClick={() => {
           handleClickDelete(id);
         }}/>
@@ -73,5 +77,6 @@ const ResourceCard = ({title,url, tag}:Props) => {
     </div>
   )
 }
+
 
 export default ResourceCard

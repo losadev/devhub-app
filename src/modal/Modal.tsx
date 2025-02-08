@@ -25,14 +25,14 @@ const Modal = ({isOpen, onClose}: Props) => {
         favourite: false
       }
       addResource(resource);
+      setTitle('')
+      setUrl('')
+      setType('')
+  
+      addResourceToLocalStorage(resource)
+      addResource(resource);
     }
 
-    setTitle('')
-    setUrl('')
-    setType('')
-
-    addResourceToLocalStorage(resource)
-    addResource(resource);
 
   }
 
@@ -45,7 +45,7 @@ const Modal = ({isOpen, onClose}: Props) => {
       <div className="info-modal">
         <fieldset>
           <label htmlFor="title">Title</label>
-          <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} required/>
+          <input type="text" name="title" onChange={(e) => setTitle(e.target.value)}  required/>
         </fieldset>
         <fieldset>
           <label htmlFor="url">URL</label>
@@ -67,9 +67,8 @@ const Modal = ({isOpen, onClose}: Props) => {
         <button className='btn-cancel' onClick={() => onClose()}>Cancel</button>
         <button className='btn-add' onClick={() => {
           handleClick();
-
           onClose();
-        }}>Add Resource</button>
+        }}>Add new resource</button>
       </div>
       </div>
     </div>
