@@ -1,13 +1,14 @@
 import ResourceCard from "../../components/ResourceCard/ResourceCard"
+import useResource from "../../hooks/useResource"
 import './index.css'
 
 const Resources = () => {
+  const {resources} = useResource()
   return (
     <div className="container-resourceCard">
-      <ResourceCard tag="Frontend" title="Node.js Architecture and Design Principles" url="https://nodejs-architecture.example.com/design-principles"/>
-      <ResourceCard tag="Frontend" title="Node.js Architecture and Design Principles" url="https://nodejs-architecture.example.com/design-principles"/>
-      <ResourceCard tag="Frontend" title="Node.js Architecture and Design Principles" url="https://nodejs-architecture.example.com/design-principles"/>
-      <ResourceCard tag="Frontend" title="Node.js Architecture and Design Principles" url="https://nodejs-architecture.example.com/design-principles"/>
+      {resources.map((resources,index) => (
+        <ResourceCard key={index} tag={resources.type} title={resources.title} url={resources.url}/>
+      ))}
     </div>
   )
 }
