@@ -1,4 +1,7 @@
+import { useState } from 'react'
 import './index.css'
+import useResource from '../hooks/useResource'
+import { ResourceType } from '../types/Resource.type'
 
 type Props = {
   isOpen: boolean
@@ -6,6 +9,21 @@ type Props = {
 }
 
 const Modal = ({isOpen, onClose}: Props) => {
+  const [title, setTitle] = useState<string>('')
+  const [url, setUrl] = useState<string>('')
+  const [type, setType] = useState<string>('')
+  const {addResource} = useResource();
+
+  const handleClick = () => {
+    const resource:ResourceType = {
+      id:Math.floor(Math.random()*10),
+      title: title,
+      url: url,
+      type: type,
+      favourite: false
+    }
+    addResource(resource);
+  }
 
   if (!isOpen) return null
 
@@ -16,15 +34,15 @@ const Modal = ({isOpen, onClose}: Props) => {
       <div className="info-modal">
         <fieldset>
           <label htmlFor="title">Title</label>
-          <input type="text" name="title"/>
+          <input type="text" name="title" onChange={(e) => setTitle(e.target.value)}/>
         </fieldset>
         <fieldset>
           <label htmlFor="url">URL</label>
-          <input type="text" name="url"/>
+          <input type="text" name="url" onChange={(e) => setUrl(e.target.value)}/>
         </fieldset>
         <fieldset>
           <label htmlFor="type">Type</label>
-          <select name="type">
+          <select name="type" onChange={(e) => setType(e.target.value)}>
             <option value="Frontend">Frontend</option>
             <option value="Backend">Backend</option>
             <option value="DevOps">DevOps</option>
@@ -35,7 +53,7 @@ const Modal = ({isOpen, onClose}: Props) => {
       </div>
       <div className="container-btn">
         <button className='btn-cancel' onClick={() => onClose()}>Cancel</button>
-        <button className='btn-add'>Add Resource</button>
+        <button className='btn-add' onClick={handleClick}>Add Resource</button>
       </div>
       </div>
     </div>
