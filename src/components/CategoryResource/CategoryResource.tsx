@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { memo, ReactNode } from 'react'
 import { IconType } from 'react-icons'
 import './index.css'
 
@@ -9,7 +9,7 @@ type Props = {
   children: ReactNode 
 }
 
-const CategoryResource = ({Icon,title, numResources,children}: Props) => {
+const CategoryResource = memo(({Icon,title, numResources,children}: Props) => {
   return (
     <div className='container-category'>
       <section>
@@ -24,6 +24,6 @@ const CategoryResource = ({Icon,title, numResources,children}: Props) => {
       {children}
     </div>
   )
-}
+});
 
 export default CategoryResource

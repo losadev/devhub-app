@@ -1,26 +1,31 @@
+import Button from "../../components/Button/Button"
 import ResourceCard from "../../components/ResourceCard/ResourceCard"
+import SearchBar from "../../components/SearchBar/SearchBar"
 import useResource from "../../hooks/useResource"
-import { setResourceToFavouriteLocalStorage } from "../../services/localStorageService"
 import './index.css'
 
 const Resources = () => {
 
-  const { resources,removeResource, setFavourite} = useResource()
+  const { removeResource, setFavourite,openModal,searchResource,filteredResources} = useResource()
   const handleClickDelete = (id: number | string) => {
     removeResource(id)
   }
 
   const handleClickSetFavourite = (id: number | string) => {
     setFavourite(id)
-    setResourceToFavouriteLocalStorage(id)
   }
 
   //const resources:ResourceType[] = getResourceFromLocalStorage() || [];
 
   return (
+    <>
+    <div className="input-btn-add">
+    <SearchBar searchResource={searchResource}/>
+    <Button openModal={openModal}/>
+    </div>
     <div className="container-resourceCard">
-      {resources.length > 0 ? (
-        resources.map((resource) => (
+      {filteredResources.length > 0 ? (
+        filteredResources.map((resource) => (
           <ResourceCard
             id={resource.id}
             key={resource.id} // Usar id en vez de index como key
@@ -36,6 +41,7 @@ const Resources = () => {
         <div style={{color:"#fff"}}>No resources available</div>
       )}
     </div>
+    </>
   )
 }
 

@@ -5,6 +5,9 @@
   margin-top: 2rem;
    text-overflow: ellipsis; 
 }
+.input-btn-add {
+  display: flex;
+}
 @media (width <= 1565px) {
   .container-resourceCard {
     display: grid;

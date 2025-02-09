@@ -5,12 +5,12 @@ import MainContent from "../MainContent/MainContent";
 import './index.css'
 
 const Layout = () => {
-  const { isOpen, onClose, openModal } = useResource();
+  const { isOpen, onClose } = useResource();
 
   return (
     <div className="container-layout">
       <AsideBar />
-      <MainContent openModal={openModal} />
+      <MainContent/>
       <Modal 
         isOpen={isOpen} 
         onClose={onClose} 
