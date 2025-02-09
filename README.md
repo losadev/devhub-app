@@ -1,51 +1,20 @@
-# React + TypeScript + Vite
+# 📌 DevHub – Developer Resource Management Panel  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DevHub** is an application designed to help developers store and organize useful resources such as articles, videos, tools, and GitHub repositories.  
 
-Currently, two official plugins are available:
+## 📂 Key Features  
+- ✅ **Add, edit, and delete resources** with title, link, description, and category (e.g., *Frontend, Backend, DevOps*).  
+- ✅ **Filter and search** resources by name or category.  
+- ✅ **Mark resources as favorites** and add **custom tags** for better organization.  
+- ✅ **State persistence** using Zustand, with an alternative implementation using Context API.  
+- ✅ **Custom hooks** to handle reusable logic like resource filtering and global state management.  
+- ✅ **Light/Dark mode** with persistence in localStorage.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack  
+- 🔹 **React + TypeScript**  
+- 🔹 **Context API** for global state management  
+- 🔹 **Custom hooks** for encapsulating reusable logic  
+- 🔹 **React Router** (optional, if divided into multiple pages)  
 
-## Expanding the ESLint configuration
+🔗 *Stay organized and boost your productivity with DevHub!*
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# devhub-app
