@@ -1,11 +1,16 @@
-import './index.css'
+import './index.css';
 
-const ButtonViewAll = () => {
+type Props = {
+  onClick: (category: string) => void;
+  category: string
+};
+
+const ButtonViewAll = ({ onClick, category }: Props) => {
   return (
-    <button className='btn-view-all'>
+    <button className='btn-view-all' onClick={() => onClick(category)}>
       View All
     </button>
-  )
-}
+  );
+};
 
-export default ButtonViewAll
+export default ButtonViewAll;

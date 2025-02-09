@@ -5,6 +5,7 @@ import Resources from './pages/Resources/Resources'
 import Favourites from './pages/Favourites'
 import Settings from './pages/Settings'
 import Layout from './components/Layout/Layout'
+import ResourcesPerCategory from './pages/Resources/ResourcePerCategory/ResourcePerCategory'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />}/>
-          <Route path="/resources" element={<Resources />}/>
+          <Route path="/resources" element={<Resources />} />
+          <Route path='/resources/:category' element={<ResourcesPerCategory />}/>
           <Route path="/favourites" element={<Favourites />} /> 
           <Route path="/settings" element={<Settings />} /> 
         </Route>

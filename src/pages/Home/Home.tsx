@@ -7,13 +7,18 @@ import { RiPaletteLine } from "react-icons/ri";
 import { FaTools } from "react-icons/fa";
 import './index.css'
 import useResource from "../../hooks/useResource";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { resources} = useResource();
+  const navigate = useNavigate()
 
-  const countResourcesByCategory = (type: string) => {
-    return resources.filter((r) => r.type === type).length;
-  }
+  const handleCategoryClick = (category: string) => {
+      console.log("Navigating to category:", category);
+
+    navigate(`/resources/${category.toLowerCase()}`);  // Redirige a la ruta de la categoría
+  };
+  const countResourcesByCategory = (type: string) => {return resources.filter((r) => r.type === type).length};
 
   return (
     <div className="container-home">
@@ -21,31 +26,31 @@ const Home = () => {
       <div className="container-categories">
 
       <CategoryResource 
-        Icon={PiBracketsAngleBold} children={<ButtonViewAll />} 
+        Icon={PiBracketsAngleBold} children={<ButtonViewAll category="frontend" onClick={handleCategoryClick}/>} 
         numResources={countResourcesByCategory("Frontend")} 
         title="Frontend"/>
 
       <CategoryResource 
         Icon={FaDatabase} 
-        children={<ButtonViewAll />} 
+        children={<ButtonViewAll category="backend" onClick={handleCategoryClick}/>} 
         numResources={countResourcesByCategory("Backend")} 
         title="Backend"/>
 
       <CategoryResource 
         Icon={IoSettingsOutline} 
-        children={<ButtonViewAll />} 
+        children={<ButtonViewAll category="devops"  onClick={handleCategoryClick}/>} 
         numResources={countResourcesByCategory("DevOps")} 
         title="DevOps"/>
 
       <CategoryResource 
         Icon={RiPaletteLine} 
-        children={<ButtonViewAll />} 
+        children={<ButtonViewAll category="design" onClick={handleCategoryClick}/>} 
         numResources={countResourcesByCategory("Design")}
         title="Design"/>
 
       <CategoryResource 
         Icon={FaTools} 
-        children={<ButtonViewAll />} 
+        children={<ButtonViewAll category="tools" onClick={handleCategoryClick}/>} 
         numResources={countResourcesByCategory("Tools")} 
         title="Tools"/>
       </div>
